@@ -3,8 +3,8 @@
     //INICIAR LAS SESION
     session_start();
 
-    if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
-        header ("location: ../CyP/prueba.php");
+    if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] == true){
+        header ("location: ../casasypunto/prueba.php");
         exit;
     }
 
@@ -45,13 +45,14 @@ if($_SERVER["REQUEST_METHOD"] === "POST"){
                 if(mysqli_stmt_fetch($stmt)){
                     if(password_verify($password, $hashed_password)){
                         session_start();
-
                         //ALAMCENAR DATOS EN VARIABLES DE SESION
                         $_SESSION["loggedin"] = true;
-                        $_SESSION["Id"] = $id;
+                        $_SESSION["Id"] = $Id;
+                        $_SESSION["Nombre"]= $nombre;
                         $_SESSION["email"] = $email;
+                        //$_SESSION['last_login_timestamp'] = time();
+                        header ("location: ../casasypunto/prueba.php");
 
-                        header("location: prueba.php");
                     }else{
                         $password_err = "La contraseña que haz introducido no es valida";
                     }

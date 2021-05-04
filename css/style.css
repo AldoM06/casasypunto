@@ -2,7 +2,11 @@ body{
     background-color: #232537;
 }
 
-    .footer-dark {
+h1{
+  color:white;
+}
+
+.footer-dark {
   padding:50px 0;
   color:#f0f9ff;
   background-color:#282d32;

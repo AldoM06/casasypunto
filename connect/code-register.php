@@ -56,7 +56,7 @@
         }
         //validando apellido
         if(empty(trim($_POST["apellidos"]))){
-            $apellido_err = "Por favor, ingresa tus apellidos";
+            $apellidos_err = "Por favor, ingresa tus apellidos";
         }else{
             $apellidos = trim($_POST["apellidos"]);
         }
@@ -69,7 +69,7 @@
         //validando celular
         if(empty(trim($_POST["celular"]))){
             $celular_err = "Por favor, ingresa tu Número de celular    ";
-        }elseif(strlen(trim($_POST["celular"])) != 10){
+        }elseif(strlen(trim($_POST["celular"])) == 10){
             $celular_err = "El celular debe de ser de 10 digitos";
         }else{
             $celular = trim($_POST["celular"]);
@@ -78,7 +78,7 @@
         //validando telefono
         if(empty(trim($_POST["telefono"]))){
             $telefono_err = "Por favor, ingresa tu Número de telefono fijo    ";
-        }elseif(strlen(trim($_POST["telefono"])) != 10){
+        }elseif(strlen(trim($_POST["telefono"])) == 10){
             $telefono_err = "El celular debe de ser de 10 digitos";
         }else{
             $telefono = trim($_POST["telefono"]);
