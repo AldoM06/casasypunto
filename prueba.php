@@ -39,7 +39,7 @@
 <div class="raw">
     <div class="box1">
 
-        <h1>¡Bienvenido a tu panel de administración <?php echo $_SESSION["Nombre"]?>!</h1>
+        <h1>¡Bienvenido a tu panel de administración <?php echo $_SESSION["Nombre"]?>!  <?php echo $_SESSION["Id"]?></h1>
     
     </div>
 
@@ -50,7 +50,7 @@
     <br>
     <br>
          <a type="button" href="connect/cerrar.php" class="btn btn-outline-danger">Cerrar Sesión</a>
-         <a type="button" href="inventario.php" class="btn btn-outline-success">Publica tu anuncio una sola vez y punto</a>
+         <a type="button" href="upload_inv.php" class="btn btn-outline-success">Publica tu anuncio una sola vez y punto</a>
 
     </div>
 </div>	     

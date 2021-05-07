@@ -65,24 +65,35 @@ div#general{
     width: 100%;
 }
 .table1{
+    display: inline-block;
     position: relative;
     width: 60%;
     float: left;
 }
 .table2{
+    height: 70%;
     float: right;
     width: 40%;
 }
 .table3{
-    width: 40%;
+    width: 50%;
     float: left;
 }
 
 .table4{
-    width: 60%;
-    float: right;
-}
+    display: inline-block;
 
+    width: 50%;
+    height: 30%;
+    float: right;
+    
+}
+.tabla5{
+    display: inline-block;
+    width: 50%;
+    height: 30%;
+
+}
 #columna{
     padding-left: 20px;
     width: 50%;
@@ -236,6 +247,8 @@ img.imgredonda{
 /* Always set the map height explicitly to define the size of the div
        * element that contains the map. */
 #map {
+    display: inline-block;
+  display: block;
   height: 80%;
   width: 50%;
 }

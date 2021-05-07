@@ -1,8 +1,10 @@
 
   |<?php
+      session_start();
+
     //Incluir archivo de conexion a db
     require_once "connect.php";
-        error_reporting(0);
+    error_reporting(0);
     //variables de error
 
     $error_clave = $error_tipo = $error_img = $error_nombre = "";
@@ -39,6 +41,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     $exterior = val($_POST["exterior"]);
     $interior = val($_POST["interior"]);
     $ref = val($_POST["ref"]);
+    $Id_user = $_SESSION["Id"];
 
 
 
@@ -51,7 +54,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 
     }else{
 
-        $sql = "INSERT INTO inmuebles (clave, tipo, imagenes, nombre) VALUES ('$clave', '$tipo', 'ID IMG', '$nombre')";
+        $sql = "INSERT INTO inmuebles (clave, tipo, nombre, us_id ) VALUES ('$clave', '$tipo', '$nombre', '$Id_user')";
             if($conn->query($sql) === TRUE){
                 
                 $last_id = $conn->insert_id;
@@ -75,7 +78,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
               echo "Registro de inmueble registrado: ";
               //header('location:../subir_foto/foto.php');
            }else{
-            $sql = "INSERT INTO imagenes (imagen, nombre) VALUES ('$imagen', '$nombre')";
+            $sql = "INSERT INTO imagenes (imagen, nombre, inmueble_id) VALUES ('$imagen', '$nombre', '$last_id')";
              $resultado = mysqli_query($conn,$sql);
              if($resultado){
                   $subir = move_uploaded_file($temp,'connect/imagenes/'.$imagen); 

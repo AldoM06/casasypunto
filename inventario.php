@@ -1,16 +1,19 @@
 <?php
    include 'connect/code_inventario.php';
    include 'connect/connect.php';
-    $query = "select * from imagenes";
+     //INICIAR LAS SESION
+
+   session_start();
+
+   if(!isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] !== true){
+       header ("location: ../casasypunto/index.php");
+       exit;
+   }
+   echo $_SESSION['Id'];
+     $query = "select * from imagenes";
     $resultado = mysqli_query($conn,$query);
 
-    //INICIAR LAS SESION
-    session_start();
-
-    if(!isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] !== true){
-        header ("location: ../casasypunto/index.php");
-        exit;
-    }
+ 
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -19,7 +22,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Subir datos de casas</title>
     <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">    <link rel="stylesheet" href="css/inv.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/inv.css">
     <script src="js/main.js"></script>
 
 </head>
@@ -56,12 +60,13 @@
                     </tr>
                     <tr>
                         <td colspan="1"></td>
-                        <td><input  class="" type="file" name="imagen" ></td>
+                        <td><input  class="input-css" type="file" name="imagen" ></td>
                     </tr>
                     <tr>
                         <td colspan="1">Elige el titulo correcto de la foto: </td>
                             <td>
-                            <select class="input-css" name="title_img" id="">
+                            <select class="input-css" name="title_img" id="" placeholder="Elije un opcion">
+                                <option hidden selected>Selecciona una opción</option>
                                 <option value="Frente">Parte frontal del inmueble</option>
                                 <option value="Interior">Parte interior del inmubele</option>
                                 <option value="Otra">Otra</option>
@@ -243,11 +248,13 @@
 
                 </table>
                 </div>
-    <div>
+                </div>
+
+    <div class="tabla5">
         <div id="map">
-            <!-- Async script executes immediately and must be after any DOM elements used in callback. -->
+            <!-- Async script executes immediately and must be after any DOM elements used in callback.
             <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBbpJZrcax_lvmrZt4ARtpF0_D_WR2Nsao&callback=initMap&libraries=&v=weekly"
-            async></script>
+            async></script> -->
         </div>
     </div>
     <p>
@@ -261,7 +268,6 @@
                     </p>
     </form>
     
-</div>
 
 </body>
 </html>
