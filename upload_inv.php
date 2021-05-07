@@ -17,6 +17,10 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons"rel="stylesheet">
     <link rel="stylesheet" href="css/upload_inv.css">
     <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/redes.css">
+
+    <script src="js/main.js"></script>
+
 
     <!-- /Boostrap-->
 
@@ -48,39 +52,73 @@
                     </tr>
 
                     <tr>
-                        <td><p>Superficie del terreno m2:</p></td>
+                        <td><p>Superficie del terreno (metros cuadrados):</p></td>
                         <td><input class= "input-css1"type="text"></td>
-                        <td><p>Superficie construida m<sup>2</sup>: </p></td> 
+                        <td><p>Superficie construida (metros cuadrados): </p></td> 
                         <td><input class= "input-css1"type="text"></td>
 
 
                     </tr>
                     <tr>
-                        <!--<td><input class="photo-input" type="file" id="file">
-                            <label for="file">
-                                <span class="material-icons">
-                                add_a_photo</span> &nbsp;
-                                Elige una foto
-                            </label></td>
-                        <td><select class="select-css" name="title_img" id="">
-                                <option hidden selected>Selecciona un titulo </option>
-                                <option value="Frente">Parte frontal del inmueble</option>
-                                <option value="Interior">Parte interior del inmubele</option>
-                                <option value="Otra">Otra</option></td>
-                        <td><button type="button" class="btn btn-success">Subir</button></td>-->
+                        <td><p>Número de recamaras :</p></td>
+                        <td><select class="input-css1" name="recam">
+                            <option>1 </option>
+                            <option>2 </option>
+                            <option>3 </option>
+                            <option>4 </option>
+                            <option>5 </option>
+                            </select>
+                        </td>
+                        <td><p>Número de baños :</p></td>
+                        <td><select class="input-css1" name="recam">
+                            <option>1 </option>
+                            <option>2 </option>
+                            <option>3 </option>
+                            </select>
+                        </td>
                     </tr>
+                    <td><p>Número de estacionamientos :</p> </td>
 
+                    <td><select class="input-css1" name="recam">
+                        <option>1 </option>
+                        <option>2 </option>
+                        <option>3 </option>
+                        </select></td>
+
+                    </tr>
+                    <tr>
+                        <td colspan="4" ><h2>Ubicación del inmueble</h2></td>
+                    </tr>
+                    <tr>
+                        <td><p>Estado:</p></td>
+                        <td><p>Municipio</p></td>
+                        <td><p>Colonia</p></td>
+                        <td><p>Calle</p></td>
+
+                    </tr>
+                    <tr>
+                        <td><input class= "input-css2"type="text"></td>
+                        <td><input class= "input-css2"type="text"></td>
+                        <td><input class= "input-css2"type="text"></td>
+                        <td><input class= "input-css2"type="text"></td>
+                    </tr>
                 </table>
-
-                <h2>Tus fotos subidas</h2>
-
-
+                <br>
+                <div class="padre">
+                <div id="map">
+                        < Async script executes immediately and must be after any DOM elements used in callback.
+                        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBbpJZrcax_lvmrZt4ARtpF0_D_WR2Nsao&callback=initMap&libraries=&v=weekly"
+                        async></script>
+                </div>
+                </div>
 
             </div>
         </section>
 
         <section class="section-border">
             <div class="one">
+                <h2>Sube aqui tus fotos</h2>
+
                 <div class="container">
                     <section id="Images" class="images-cards">
                         <div class="row">
@@ -107,6 +145,123 @@
                 </div>
             </div>
         </section>
+
+        <section class="section-border">
+            <div class="one">
+                <table>
+                    <h2>Detalles del Anuncio</h2>
+                    <tr>
+                        <td><p>Titulo: </p></td>
+                        <td><input class= "input-css"type="text"></td>
+                        <td><p>Precio: </p></td>
+                        <td><input class= "input-css1"type="text"></td>
+                    </tr>
+                    <tr>
+                        <td colspan="4"><h2>Donde vamos a publicar tua nuncio:</h2></td>
+                    </tr>
+                    <tr>
+                    <td>
+                            <label><input type="checkbox" id="cbox1" value="first_checkbox">
+                            <img src="imagenes/cubicos.jpg" class = "imgredonda"alt="">
+                            </label></td>
+                        <td>
+                            <label><input type="checkbox" id="cbox1" value="first_checkbox">
+                            <img src="imagenes/descarga.jpg" class = "imgredonda"alt="">
+                            </label>
+                        </td>
+                        <td>
+                            <label><input type="checkbox" id="cbox1" value="first_checkbox">
+                            <img src="imagenes/lamudi.jpg" class = "imgredonda"alt="">
+                            </label>
+                        </td>
+                        <td>
+                            <label><input type="checkbox" id="cbox1" value="first_checkbox">
+                            <img src="imagenes/mercado.png" class = "imgredonda"alt="">
+                            </label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label><input type="checkbox" id="cbox1" value="first_checkbox">
+                            <img src="imagenes/viva.png" class = "imgredonda"alt="">
+                            </label>
+                        </td>
+                        <td>
+                            <label><input type="checkbox" id="cbox1" value="first_checkbox">
+                            <img src="imagenes/segunda.png" class = "imgredonda"alt="">
+                            </label>
+                        </td>
+                        <td>
+                            <label><input type="checkbox" id="cbox1" value="first_checkbox">
+                            <img src="imagenes/trovit.png" class = "imgredonda"alt="">
+                            </label>
+                        </td>
+                        <td>
+                            <label><input type="checkbox" id="cbox1" value="first_checkbox">
+                            <img src="imagenes/inmuebles24.png" class = "imgredonda"alt="">
+                            </label>
+                        </td>
+                    </tr>
+                    <tr>
+
+                    <td>
+                            <label><input type="checkbox" id="cbox1" value="first_checkbox">
+                            <img src="imagenes/facebook.png" class = "imgredonda"alt="">
+                            </label></td>
+                        <td>
+                            <label><input type="checkbox" id="cbox1" value="first_checkbox">
+                            <img src="imagenes/instagram (1).png" class = "imgredonda"alt="">
+                            </label>
+                        </td>
+                        <td>
+                            <label><input type="checkbox" id="cbox1" value="first_checkbox">
+                            <img src="imagenes/tik-tok.png" class = "imgredonda"alt="">
+                            </label>
+                        </td>
+                        <td>
+                            <label><input type="checkbox" id="cbox1" value="first_checkbox">
+                            <img src="imagenes/linkedin.png" class = "imgredonda"alt="">
+                            </label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label><input type="checkbox" id="cbox1" value="first_checkbox">
+                            <img src="imagenes/wats.png" class = "imgredonda"alt="">
+                            </label>
+                        </td>
+                        <td>
+                            <label><input type="checkbox" id="cbox1" value="first_checkbox">
+                            <img src="imagenes/gorjeo.png" class = "imgredonda"alt="">
+                            </label>
+                        </td>
+                        <td>
+                            <label><input type="checkbox" id="cbox1" value="first_checkbox">
+                            <img src="imagenes/telegram.png" class = "imgredonda"alt="">
+                            </label>
+                        </td>
+                        <td>
+                            <label><input type="checkbox" id="cbox1" value="first_checkbox">
+                            <img src="imagenes/youtube.png" class = "imgredonda"alt="">
+                            </label>
+                        </td>
+
+                        <tr>
+                            <td><button type="button" class="btn btn-success">Publicar ahora</button></td>
+                            <td><button type="button" class="btn btn-danger">Descargar PDF</button></td>
+                            <td><button type="button" class="btn btn-secondary">Cancelar</button></td>
+                            <td><a type="button" href="prueba.php" class="btn btn-dark">Regresar al panel</a></td>
+
+                        </tr>
+                    </tr>
+
+
+                </table>
+
+                
+            </div>
+        </section>
+
 
     <!-- Bootstrap y jQuery -->
     
