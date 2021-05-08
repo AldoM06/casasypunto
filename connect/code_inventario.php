@@ -24,11 +24,9 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     $clave = val($_POST["clave"]);
     $tipo = val($_POST["tipo"]);
     //Variables de las imagenes
-
     $imagen = $_FILES['imagen']['name'];
     //optenemos titulo
     $nombre = $_POST['title_img'];
-    
     $superficie_T = trim($_POST["superficie_T"]);
     $superficie_C = trim($_POST["superficie_C"]);
     $recam = trim($_POST["recam"]);
@@ -54,7 +52,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 
     }else{
 
-        $sql = "INSERT INTO inmuebles (clave, tipo, nombre, us_id ) VALUES ('$clave', '$tipo', '$nombre', '$Id_user')";
+        $sql = "INSERT INTO inmuebles (clave, tipo, us_id ) VALUES ('$clave', '$tipo', '$Id_user')";
             if($conn->query($sql) === TRUE){
                 
                 $last_id = $conn->insert_id;
@@ -78,7 +76,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
               echo "Registro de inmueble registrado: ";
               //header('location:../subir_foto/foto.php');
            }else{
-            $sql = "INSERT INTO imagenes (imagen, nombre, inmueble_id) VALUES ('$imagen', '$nombre', '$last_id')";
+            $sql = "INSERT INTO imagenes (imagen, nombre, inmueble_id) VALUES ('$imagen', 'Vacio', '$last_id')";
              $resultado = mysqli_query($conn,$sql);
              if($resultado){
                   $subir = move_uploaded_file($temp,'connect/imagenes/'.$imagen); 

@@ -15,7 +15,7 @@
         console.log(this.files);
         var files = this.files;
         var element;
-        var supportedImages = ["image/jpeg", "image/png", "image/gif"];
+        var supportedImages = ["image/jpeg", "image/png", "image/gif" , "image/jpg"];
         var seEncontraronElementoNoValidos = false;
 
         for (var i = 0; i < files.length; i++) {
@@ -35,7 +35,7 @@
         $("#add-photo-container").append(newInputFile);
 
         if (seEncontraronElementoNoValidos) {
-            showMessage("Se encontraron archivos no validos.");
+            alert("Se encontraron archivos no validos.");
         }
         else {
             showMessage("Todos los archivos se subieron correctamente.");

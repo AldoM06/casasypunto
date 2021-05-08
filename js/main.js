@@ -30,20 +30,28 @@ function initMap() {
 	});
   }
 
-//segundo listado de opciones
+//MARCAR TODAS
 
 
-/*document.querySelectorAll('#opciones1 > .opcion1').forEach((opcion1) => {
-	opcion1.addEventListener('click', (e) => {
-		e.preventDefault();
-		contenidoSelect1.innerHTML = e.currentTarget.innerHTML;
-		select1.classList.toggle('active');
-		opciones1.classList.toggle('active');
-		hiddenInput.value = e.currentTarget.querySelector('.titulo').innerText;
-	});
-});
-
-select1.addEventListener('click', () => {
-	select1.classList.toggle('active');
-	opciones1.classList.toggle('active');
-});*/
+function marcar(source) {
+	var checkboxes = document.getElementsByTagName('input'); //obtenemos todos los controles del tipo Input
+	for (i = 0; i < checkboxes.length; i++) //recorremos todos los controles
+	{
+	  if (checkboxes[i].type == "checkbox") //solo si es un checkbox entramos
+	  {
+		checkboxes[i].checked = source.checked; //si es un checkbox le damos el valor del checkbox que lo llamó (Marcar/Desmarcar Todos)
+	  }
+	}
+  }
+  
+  function marcarHijos(source) {
+	var form2 = document.getElementById("form2");
+	var checkboxes = form2.getElementsByTagName('input'); //obtenemos todos los controles del tipo Input
+	for (i = 0; i < checkboxes.length; i++) //recorremos todos los controles
+	{
+	  if (checkboxes[i].type == "checkbox") //solo si es un checkbox entramos
+	  {
+		checkboxes[i].checked = source.checked; //si es un checkbox le damos el valor del checkbox que lo llamó (Marcar/Desmarcar Todos)
+	  }
+	}
+  }

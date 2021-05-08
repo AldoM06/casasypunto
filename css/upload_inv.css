@@ -3,10 +3,10 @@
 }
 .section-border{
     border: 2px dashed steelblue;
-    padding: 1em;
-    margin: 3em auto;
+    padding: .5em;
+    margin: 1em auto;
     width: 1000px;
-    height: 760px;
+    height: 800px;
 }
 .input-css{
     box-shadow: 3px 3px 11px #448ee4;
@@ -70,8 +70,8 @@ th, td {
     text-align: left;
     align-items: center;
     vertical-align: center;
-    padding-top: 5px;
-    padding-bottom: 5px;
+    padding-top: 3px;
+    padding-bottom: 3px;
 
  }
  .select-css {

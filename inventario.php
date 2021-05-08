@@ -134,7 +134,7 @@
 
                     <td>Número de baños : </td>
 
-                    <td><select class="input-css" name="recam">
+                    <td><select class="input-css" name="wc">
                         <option>1 </option>
                         <option>2 </option>
                         <option>3 </option>
@@ -144,7 +144,7 @@
                 <tr>
                     <td>Número de estacionamientos : </td>
 
-                    <td><select class="input-css" name="recam">
+                    <td><select class="input-css" name="estac">
                         <option>1 </option>
                         <option>2 </option>
                         <option>3 </option>
