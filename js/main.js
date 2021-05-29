@@ -1,37 +1,35 @@
-const select = document.querySelector('#select');
-const opciones = document.querySelector('#opciones');
-const contenidoSelect = document.querySelector('#select .contenido-select');
-const hiddenInput = document.querySelector('#inputSelect');
+function iniciarMapa(){
+	var latitud = 19.6653016;
+	var longitud = -99.1323077;
 
-const select1 = document.querySelector('#select1');
-const opciones1 = document.querySelector('#opciones1');
-const contenidoSelect1 = document.querySelector('#select1 .contenido-select1');
-const hiddenInput1 = document.querySelector('#inputSelect1');
+	coordenadas = {
+		lng: longitud,
+		lat: latitud
+	}
+	generarMapa(coordenadas);
+}
 
-document.querySelectorAll('#opciones > .opcion').forEach((opcion) => {
-	opcion.addEventListener('click', (e) => {
-		e.preventDefault();
-		contenidoSelect.innerHTML = e.currentTarget.innerHTML;
-		select.classList.toggle('active');
-		opciones.classList.toggle('active');
-		hiddenInput1.value = e.currentTarget.querySelector('.titulo').innerText;
-	});
-});
+	function generarMapa(coordenadas){
+		var map = new google.maps.Map(document.getElementById("map"),
+		{
+			zoom: 12,
+			center: new google.maps.LatLng(coordenadas.lat, coordenadas.lng)
+		});
+		marcador =  new google.maps.Marker({
 
-select.addEventListener('click', () => {
-	select.classList.toggle('active');
-	opciones.classList.toggle('active');
-});
+			map: map,
+			draggable: true,
+			position: new google.maps.LatLng(coordenadas.lat,  coordenadas.lng)
 
-function initMap() {
-	map = new google.maps.Map(document.getElementById("map"), {
-	  center: { lat: -34.397, lng: 150.644 },
-	  zoom: 8,
-	});
-  }
+		});
 
-//MARCAR TODAS
+		marcador.addListener('dragend',function(event){
+			document.getElementById("latitud").value = this.getPosition().lat();
+			document.getElementById("longitud").value = this.getPosition().lng();
+		})
+	}
 
+	//MARCAR TODAS LAS OPCIONES DE PUBLICIDAD
 
 function marcar(source) {
 	var checkboxes = document.getElementsByTagName('input'); //obtenemos todos los controles del tipo Input
@@ -44,14 +42,5 @@ function marcar(source) {
 	}
   }
   
-  function marcarHijos(source) {
-	var form2 = document.getElementById("form2");
-	var checkboxes = form2.getElementsByTagName('input'); //obtenemos todos los controles del tipo Input
-	for (i = 0; i < checkboxes.length; i++) //recorremos todos los controles
-	{
-	  if (checkboxes[i].type == "checkbox") //solo si es un checkbox entramos
-	  {
-		checkboxes[i].checked = source.checked; //si es un checkbox le damos el valor del checkbox que lo llamó (Marcar/Desmarcar Todos)
-	  }
-	}
-  }
+
+

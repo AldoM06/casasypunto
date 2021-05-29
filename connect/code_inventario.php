@@ -99,7 +99,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         }
 
                 //$sql = "INSERT INTO descripcion (superficie_T, superficie_C, recamaras, wc, estacionamiento, inmueble_id) VALUES ('22','34','2','2','1','$last_id')";
-        $sql = "INSERT INTO descripcion (superficie_T, superficie_C, recamaras, wc, estacionamiento, inmueble_id) VALUES ('$superficie_T','$superficie_C','$recam','$wc','$estac','$last_id')";
+                 $sql = "INSERT INTO descripcion (superficie_T, superficie_C, recamaras, wc, estacionamiento, inmueble_id) VALUES ('$superficie_T','$superficie_C','$recam','$wc','$estac','$last_id')";
 
                   if($conn->query($sql) === TRUE){
                 

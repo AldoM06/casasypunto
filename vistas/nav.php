@@ -38,6 +38,7 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul  class="navbar-nav ml-auto">
                     <li class="nav-item"><a class="nav-link" href="../casasypunto/about.php">Conócenos</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../casasypunto/project.php">Proyecto</a></li>
                     <li class="nav-item"><a class="nav-link" href="../casasypunto/invest.php" >Quiero invertir</a></li>
                     <li class="nav-item"><a class="nav-link"  class="btn btn-default btn-rounded mb-4"
                      data-toggle="modal" data-target="#modalLoginForm">Quiero vender</a></li>

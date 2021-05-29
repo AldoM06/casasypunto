@@ -153,7 +153,7 @@
             <div class="col sm" class="contenedor">
                 <form action="">
                     <div class="selectbox">
-                        <div class="select" id="select">
+                        <div class="select" >
                             <div class="contenido-select">
                                 <h1 class="titulo">Selecciona que deseas hacer</h1>
                                 <p class="descripcion">Comprar o traspasar un inmueble</p>

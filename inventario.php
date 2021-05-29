@@ -40,7 +40,7 @@
             <div class="table1">
                 <table>
                     <tr>
-                        <td colspan="3" ><h2>Datos generales del inmueble</h2></td>
+                        <td colspan="3"><h2>Datos generales del inmueble</h2></td>
                     </tr>
                     <tr>
                         <td>Ingresa la cable de la vivienda: </td>

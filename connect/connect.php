@@ -1,5 +1,5 @@
 <?php
-    $hn ='127.0.0.1';
+    $hn ='127.0.0.1:3325';
     $db = 'casaypunto';
     $user = 'root';
     $pw = '';

@@ -1,3 +1,4 @@
+//SCRIP DE LAS OPCIONES DE BUSQUEDA
 const select = document.querySelector('#select');
 const opciones = document.querySelector('#opciones');
 const contenidoSelect = document.querySelector('#select .contenido-select');

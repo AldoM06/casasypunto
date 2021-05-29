@@ -1,6 +1,10 @@
 *{
     font-family:'Lucida Sans Unicode';
 }
+
+body{
+    background-color: #232537;
+}
 .section-border{
     border: 2px dashed steelblue;
     padding: .5em;
@@ -25,10 +29,10 @@
 
 .input-css1{
     box-shadow: 3px 3px 11px #448ee4;
-    background: transparent;
     border: 2px solid #448ee4;
     border-radius: 5px 5px 5px 5px;
-    color: white;
+    background: transparent;
+    color:white;
     width: 75px; 
     height: 34px;
     font-size: 15px;
@@ -37,6 +41,11 @@
           box-sizing: border-box;
 
 }
+.input-css1:focus, .select-css:focus {
+    background-color: #232537;
+    border: 4px solid green;
+    color: white;
+    }
 
 .input-css2{
     box-shadow: 3px 3px 11px #448ee4;
@@ -79,7 +88,9 @@ th, td {
     line-height: 1.3;
     width: 180px; 
     height: 34px;
+    background: transparent;
     overflow: hidden; 
+    color: white;
     align-content: center;
     box-shadow: 3px 3px 11px #448ee4;
     border: 2px solid #448ee4;
@@ -156,8 +167,126 @@ p{
     align-items: center;
 }
 
+.msg-error{
+    color: red;
+    font-size: 10px;
+}
 #map {
   height: 100%;
   width: 100%;
   display: flex !important;
+}
+
+.autocompletar{
+    position: absolute  !important;
+    display: inline-block  !important;
+    text-transform:uppercase
+}
+
+
+strong{
+    color:white;   
+    background-color: #00D8FF; 
+}
+
+#estado{
+    color:white!important;
+    border: none;
+    border-radius: 30px;
+    font-size: 1em;
+    outline: none;
+    text-align: center;
+
+}
+
+#municipio{
+    color:white!important;
+    border: none;
+    border-radius: 30px;
+    font-size: 1em;
+    outline: none;
+    text-align: center;
+}
+
+
+#localidad{
+    color:white!important;
+    border: none;
+    border-radius: 30px;
+    font-size: 1em;
+    outline: none;
+    text-align: center;
+}
+
+
+.lista-autocompletar-estado{
+    color: black !important;
+    position: absolute !important;
+    border: 1px solid #448ee4 !important;
+    border-bottom: none !important;
+    z-index: 200 !important;
+    left:200px !important;
+    right: 200px !important;
+    width:180px !important;
+    height: 34px;
+}
+.lista-autocompletar-municipio{
+    color: black !important;
+    position: absolute !important;
+    border: 1px solid #448ee4 !important;
+    border-bottom: none !important;
+    z-index: 200 !important;
+    left:400px !important;
+    right: 200px !important;
+    width:180px !important;
+    height: 34px;
+}
+
+.lista-autocompletar-localidad{
+    color: black !important;
+    position: absolute !important;
+    border: 1px solid #448ee4 !important;
+    border-bottom: none !important;
+    z-index: 200 !important;
+    left:800px !important;
+    right: 200px !important;
+    width:180px !important;
+    height: 34px;
+}
+
+.lista-autocompletar-estado div{
+    padding: 10px  !important;
+    cursor: pointer  !important;
+    background-color: white  !important;
+    border-bottom: 1px solid white  !important;
+
+}
+
+.lista-autocompletar-municipio div{
+    padding: 10px  !important;
+    cursor: pointer  !important;
+    background-color: white  !important;
+    border-bottom: 1px solid white  !important;
+
+}
+
+.lista-autocompletar-localidad div{
+    padding: 10px  !important;
+    cursor: pointer  !important;
+    background-color: white  !important;
+    border-bottom: 1px solid white  !important;
+
+}
+
+.lista-autocompletar-estado, .lista-autocompletar-municipio , .lista-autocompletar-localidad div:hover{
+    background-color: dodgerblue !important;
+}
+
+.autocompletar-active{
+    background-color: dodgerblue !important;
+    color: #a1caff !important;
+}
+
+.autocompletar-active strong{
+    color: white !important;
 }
